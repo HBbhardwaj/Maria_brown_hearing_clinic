@@ -12,6 +12,7 @@ import 'package:maria_brown_hearing_clinic/utils/app_strings.dart';
 class DashboardController extends GetxController{
   var tabIndex = 0.obs;
   List<Widget> screensList = [];
+
   List<String> textList = [];
 
   final GlobalKey<ScaffoldState> globalKey = GlobalKey();

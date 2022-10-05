@@ -48,17 +48,15 @@ class _SplashScreenState extends State<SplashScreen>{
               2,child: Image.asset(AppImages.appLogoTrans,
             fit: BoxFit.fill,
               color: Colors.white,
-             width: Get.width/2,
-            height: Get.height/6,),),
+             width: Get.width/2,),),
 
             /// --- app image ---
 
             Expanded(flex:
-              5,child: Image.asset(AppImages.appLogoTrans,
+              4,child: Image.asset(AppImages.appLogoTrans,
               fit: BoxFit.fill,
               color: Colors.white,
-              width: Get.width/2,
-              height: Get.height/5,),),
+              width: Get.width/2,),),
 
 
 
@@ -93,7 +91,7 @@ class _SplashScreenState extends State<SplashScreen>{
 
             Expanded(flex:
             1,child:Padding(
-              padding: const EdgeInsets.all(22.0),
+              padding: const EdgeInsets.all(15.0),
               child:  CommonOutlineButton(
                 width: Get.width/2,fontColor: Colors.white,
                 buttonText: AppStrings.login,

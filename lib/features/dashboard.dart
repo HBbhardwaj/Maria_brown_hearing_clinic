@@ -10,16 +10,16 @@ import '../utils/app_colors.dart';
 
 class Dashboard extends StatelessWidget{
 
-   final _dashboardController  = Get.put(DashboardController());
-
+  final _dashboardController  = Get.put(DashboardController());
   Dashboard({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context){
-    return Obx(() => Scaffold(
+    return Obx(() => SafeArea(child: Scaffold(
       key: _dashboardController.globalKey,
       appBar: AppBar(
         backgroundColor: AppColor.colorPrimary,
+        elevation: 0.0,
         leading: InkWell(
           child: Padding(
             padding: const EdgeInsets.all(15.0),
@@ -36,7 +36,7 @@ class Dashboard extends StatelessWidget{
       ),
       body: _dashboardController.screensList.elementAt(_dashboardController.tabIndex.value),
       drawer: NavigationDrawer(),
-    ));
+    )));
   }
 
 }
