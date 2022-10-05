@@ -12,6 +12,8 @@ import '../utils/app_font_size.dart';
 class NavigationDrawer extends StatelessWidget {
   final _dashboardController = Get.put(DashboardController());
 
+   NavigationDrawer({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Drawer(

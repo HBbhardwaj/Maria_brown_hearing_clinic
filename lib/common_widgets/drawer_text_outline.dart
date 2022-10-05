@@ -43,34 +43,31 @@ class DrawerTextOutline extends StatelessWidget {
                 color:  borderColor!,
                 width: borderWidth!
             ),
-
             borderRadius: BorderRadius.all(
                 Radius.circular(borderRadius!)
             )
         ),
-
-
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: [
-            Image.asset(imageText!,
-              width: imageWidth,
-              height: imageHeight,
-              fit: boxFit!,
-              color: imageColor,
-            ),
-
+           Expanded(flex: 1,child:  Image.asset(imageText!,
+             width: imageWidth,
+             height: imageHeight,
+             fit: boxFit!,
+             color: imageColor,
+           ),),
             const SizedBox(
-              width: 20,
+              width: 15,
             ),
 
-           Flexible(child:  CommonTextView(text: listText,
+           Expanded(flex: 2,
+             child:  CommonTextView(text: listText,
              fontSize: fontSize,
              fontWeight: fontWeight,
              textColor: textColor!,
-           ))
+           ),)
           ],
         ),
       ),

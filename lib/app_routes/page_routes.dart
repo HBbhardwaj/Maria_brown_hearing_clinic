@@ -6,12 +6,17 @@ import 'package:maria_brown_hearing_clinic/features/dashboard.dart';
 import 'package:maria_brown_hearing_clinic/features/splash_screen.dart';
 
 appRoutes() => [
+
+  ///---- splash screen ---///
+
   GetPage(
     name: Routes.splashScreen,
     page: () => SplashScreen(),
     transition: Transition.leftToRightWithFade,
     transitionDuration: const Duration(milliseconds: 500),
   ),
+
+  ///---- dashboard screen ---///
 
   GetPage(
     name: Routes.dashboard,

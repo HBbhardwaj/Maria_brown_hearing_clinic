@@ -1,9 +1,7 @@
 
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:maria_brown_hearing_clinic/app_routes/routes.dart';
-import 'package:maria_brown_hearing_clinic/common_widgets/common_text_view.dart';
 import 'package:maria_brown_hearing_clinic/common_widgets/outline_button.dart';
 import 'package:maria_brown_hearing_clinic/utils/app_colors.dart';
 import 'package:maria_brown_hearing_clinic/utils/app_font_size.dart';
@@ -11,7 +9,9 @@ import 'package:maria_brown_hearing_clinic/utils/app_images.dart';
 import 'package:maria_brown_hearing_clinic/utils/app_strings.dart';
 
 class SplashScreen extends StatefulWidget{
+  const SplashScreen({super.key});
 
+  @override
   _SplashScreenState createState() => _SplashScreenState();
 }
 
@@ -23,7 +23,6 @@ class _SplashScreenState extends State<SplashScreen>{
   @override
   void initState() {
     super.initState();
-
     FocusManager.instance.primaryFocus?.unfocus();
   }
 
@@ -110,7 +109,5 @@ class _SplashScreenState extends State<SplashScreen>{
       ),
     );
   }
-
-
 
 }
