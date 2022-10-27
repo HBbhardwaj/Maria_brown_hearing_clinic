@@ -35,7 +35,6 @@ class _SplashScreenState extends State<SplashScreen>{
         width: Get.width,
         height: Get.height,
         color: AppColor.colorPrimary,
-
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -44,23 +43,28 @@ class _SplashScreenState extends State<SplashScreen>{
             const SizedBox(height: 30,),
             /// ---- logo ----////
             Expanded(flex:
-              2,child: Image.asset(AppImages.appLogoTrans,
-            fit: BoxFit.fill,
-              color: Colors.white,
-             width: Get.width/2,),),
+              2,child: Center(
+              child: Image.asset(AppImages.appLogoTrans,
+                fit: BoxFit.fill,
+                height: 150,
+                color: Colors.white,
+                width: Get.width/2,),
+            ),),
 
-            /// --- app image ---
+            /// --- app image ---///
 
             Expanded(flex:
-              4,child: Image.asset(AppImages.appLogoTrans,
-              fit: BoxFit.fill,
-              color: Colors.white,
-              width: Get.width/2,),),
+              4,child: Center(
+              child: Image.asset(AppImages.appLogoTrans,
+                fit: BoxFit.fill,
+                color: Colors.white,
+                height: 150,
+                width: Get.width/2,),
+            ),),
 
 
 
             /// --- welcome text --- ///
-
             const Expanded(flex:
             1,child:  Center(
               child:Text.rich(
@@ -85,23 +89,24 @@ class _SplashScreenState extends State<SplashScreen>{
                 ),
               )),),
 
-
-            /// --- login Text ---
-
+            /// --- login Text ---///
             Expanded(flex:
-            1,child:Padding(
-              padding: const EdgeInsets.all(15.0),
-              child:  CommonOutlineButton(
-                width: Get.width/2,fontColor: Colors.white,
-                buttonText: AppStrings.login,
-                outlineColor: Colors.white,
-                borderRadius: 20,
-                height: 40,
-                onTap: (){
-                  Get.offAndToNamed(Routes.dashboard);
-                },
+            1,child:Container(
+              padding: const EdgeInsets.all(10.0),
+              child:  Center(
+                child: CommonOutlineButton(
+                  width: Get.width/2,fontColor: Colors.white,
+                  buttonText: AppStrings.login,
+                  outlineColor: Colors.white,
+                  borderRadius: 20,
+                  height: 40,
+                  onTap: (){
+                      Get.offAndToNamed(Routes.loginScreen);
+                    //  Get.offAndToNamed(Routes.dashboard);
+                  },
+                ),
               ),
-            ),),
+              ),),
 
           ],
         ),

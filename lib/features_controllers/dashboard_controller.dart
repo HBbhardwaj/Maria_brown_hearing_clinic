@@ -7,11 +7,16 @@ import 'package:maria_brown_hearing_clinic/features/gold_club_membership_screen.
 import 'package:maria_brown_hearing_clinic/features/hearing_aid_info.dart';
 import 'package:maria_brown_hearing_clinic/features/hearing_butler_screen.dart';
 import 'package:maria_brown_hearing_clinic/features/home_screen.dart';
+import 'package:maria_brown_hearing_clinic/features/office_contact_detail_screen.dart';
+import 'package:maria_brown_hearing_clinic/features/wax_removal_booking_screen.dart';
 import 'package:maria_brown_hearing_clinic/utils/app_strings.dart';
+
+import '../features/gold_ club_benefits_screen.dart';
 
 class DashboardController extends GetxController{
   var tabIndex = 0.obs;
   List<Widget> screensList = [];
+  var updatedList =[].obs;
 
   List<String> textList = [];
 
@@ -20,22 +25,35 @@ class DashboardController extends GetxController{
 
   @override
   void onInit() {
-    super.onInit();
+
     screensList = <Widget>[
       HomeScreen(),
-      ClientInfoScreen(),
+      const ClientInfoScreen(),
       HearingAidInfoScreen(),
       GoldClubInfoScreen(),
-      HearingButlerScreen()
+      const GoldClubBenefitsScreen(),
+      HearingButlerScreen(),
+      const WaxRemovalBookingScreen(),
+      const OfficeContactDetailScreen()
     ];
+
+
+
 
     textList = <String>[
       AppStrings.home,
       AppStrings.clientInformation,
       AppStrings.hearingAidInfo,
       AppStrings.goldClubMemberShip,
+      AppStrings.goldClubBenefits,
       AppStrings.hearingButler,
+      AppStrings.waxRemovalBooking,
+      AppStrings.officeContactDetails,
     ];
+
+    updatedList.addAll(screensList);
+
+    super.onInit();
   }
 
 
@@ -43,5 +61,12 @@ class DashboardController extends GetxController{
     tabIndex.value = index;
   }
 
+
+
+  @override
+  void dispose() {
+    super.dispose();
+
+  }
 
 }

@@ -7,6 +7,7 @@ import 'package:maria_brown_hearing_clinic/utils/app_colors.dart';
 import 'package:maria_brown_hearing_clinic/utils/app_images.dart';
 import 'package:maria_brown_hearing_clinic/utils/app_strings.dart';
 
+import '../common_widgets/card_design.dart';
 import '../utils/app_font_size.dart';
 
 class NavigationDrawer extends StatelessWidget {
@@ -24,14 +25,51 @@ class NavigationDrawer extends StatelessWidget {
           decoration: const BoxDecoration(
             color: AppColor.colorPrimary,
           ),
-          child: CommonTextView(
-            text: AppStrings.appName,
-            fontSize: mediumTextSize,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+
+
+            children: [
+
+              Container(
+                width: 70.0,
+                height: 701.0,
+                decoration: const BoxDecoration(
+                  color: Colors.blue,
+                  shape: BoxShape.circle,
+                ),
+              ),
+              const SizedBox(width: 10,),
+              Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+
+                children: [
+                  CommonTextView(
+                    text: "Kevin Brown",
+                    fontSize: normalTextSize,
+                    fontWeight: FontWeight.w300,
+                    textColor: Colors.white,
+                  ),
+
+                  const SizedBox(height: 7,),
+                  CommonTextView(
+                    text: "Pure 5AX(x2)",
+                    fontSize: extraSmallTextSize,
+                    fontWeight: FontWeight.w200,
+                    textColor: Colors.white,
+                  )
+                ],
+              )
+            ],
           ),
         ),
 
         const SizedBox(
-          height: 30,
+          height: 20,
         ),
         /// ----- home-------////
 
@@ -39,11 +77,11 @@ class NavigationDrawer extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: DrawerTextOutline(
               listText: _dashboardController.textList[0],
-              imageText: AppImages.appLogoTrans,
-              imageColor: Colors.black,
+              imageText: AppImages.diamond,
               textColor: Colors.black,
               fontWeight: FontWeight.w400,
-              fontSize: normalTextSize,
+              boxFit: BoxFit.fitHeight,
+              fontSize: smallTextSize,
               onTap: () {
 
                 _dashboardController.onTab(0);
@@ -52,7 +90,7 @@ class NavigationDrawer extends StatelessWidget {
         ),
 
         const SizedBox(
-          height: 30,
+          height: 20,
         ),
 
         /// ----- clientInformation-------////
@@ -61,11 +99,11 @@ class NavigationDrawer extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: DrawerTextOutline(
               listText: _dashboardController.textList[1],
-              imageText: AppImages.appLogoTrans,
-              imageColor: Colors.black,
+              imageText: AppImages.diamond,
               textColor: Colors.black,
               fontWeight: FontWeight.w400,
-              fontSize: normalTextSize,
+              boxFit: BoxFit.fitHeight,
+              fontSize: smallTextSize,
               onTap: () {
                 _dashboardController.onTab(1);
                 _dashboardController.globalKey.currentState!.closeDrawer();
@@ -73,7 +111,7 @@ class NavigationDrawer extends StatelessWidget {
         ),
 
         const SizedBox(
-          height: 30,
+          height: 20,
         ),
 
         /// ----- hearingAidInfo-------////
@@ -82,11 +120,11 @@ class NavigationDrawer extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: DrawerTextOutline(
               listText: _dashboardController.textList[2],
-              imageText: AppImages.appLogoTrans,
-              imageColor: Colors.black,
+              imageText: AppImages.diamond,
               textColor: Colors.black,
+              boxFit: BoxFit.fitHeight,
               fontWeight: FontWeight.w400,
-              fontSize: normalTextSize,
+              fontSize: smallTextSize,
               onTap: () {
                 _dashboardController.onTab(2);
                 _dashboardController.globalKey.currentState!.closeDrawer();
@@ -94,7 +132,7 @@ class NavigationDrawer extends StatelessWidget {
         ),
 
         const SizedBox(
-          height: 30,
+          height: 20,
         ),
 
         /// ----- goldClubMemberShip-------////
@@ -103,11 +141,12 @@ class NavigationDrawer extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: DrawerTextOutline(
               listText: _dashboardController.textList[3],
-              imageText: AppImages.appLogoTrans,
-              imageColor: Colors.black,
+              imageText: AppImages.diamond,
+              boxFit: BoxFit.fitHeight,
               textColor: Colors.black,
+              backgroundColor: Colors.yellow,
               fontWeight: FontWeight.w400,
-              fontSize: normalTextSize,
+              fontSize: smallTextSize,
               onTap: () {
                 _dashboardController.onTab(3);
                 _dashboardController.globalKey.currentState!.closeDrawer();
@@ -115,27 +154,131 @@ class NavigationDrawer extends StatelessWidget {
         ),
 
         const SizedBox(
-          height: 30,
+          height: 20,
         ),
+
+
+
+        /// ----- goldClubBenefits-------////
+
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          child: DrawerTextOutline(
+              listText: _dashboardController.textList[4],
+              imageText: AppImages.diamond,
+              boxFit: BoxFit.fitHeight,
+              textColor: Colors.black,
+              backgroundColor: Colors.yellow,
+              fontWeight: FontWeight.w400,
+              fontSize: smallTextSize,
+              onTap: () {
+                _dashboardController.onTab(4);
+                _dashboardController.globalKey.currentState!.closeDrawer();
+              }),
+        ),
+
+        const SizedBox(
+          height: 20,
+        ),
+
+
 
         /// ----- hearingButler-------////
 
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: DrawerTextOutline(
-              listText: _dashboardController.textList[4],
-              imageText: AppImages.appLogoTrans,
-              imageColor: Colors.black,
+              listText: _dashboardController.textList[5],
+              imageText: AppImages.diamond,
+              imageWidth: 20,
               textColor: Colors.black,
               fontWeight: FontWeight.w400,
-              fontSize: normalTextSize,
+              boxFit: BoxFit.fitHeight,
+              fontSize: smallTextSize,
               borderWidth: 1.0,
               onTap: () {
-                _dashboardController.onTab(4);
+                _dashboardController.onTab(5);
                 _dashboardController.globalKey.currentState!.closeDrawer();
               }),
         ),
+
+        const SizedBox(
+          height: 20,
+        ),
+
+
+
+        /// ----- wax removal booking -------////
+
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          child: DrawerTextOutline(
+              listText: _dashboardController.textList[6],
+              imageText: AppImages.diamond,
+              imageWidth: 20,
+              textColor: Colors.black,
+              fontWeight: FontWeight.w400,
+              boxFit: BoxFit.fitHeight,
+              fontSize: smallTextSize,
+              borderWidth: 1.0,
+              onTap: () {
+                _dashboardController.onTab(6);
+                _dashboardController.globalKey.currentState!.closeDrawer();
+              }),
+        ),
+
+        const SizedBox(
+          height: 20,
+        ),
+
+
+
+        /// ----- office contact deatil-------////
+
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          child: DrawerTextOutline(
+              listText: _dashboardController.textList[7],
+              imageText: AppImages.diamond,
+              imageWidth: 20,
+              textColor: Colors.black,
+              fontWeight: FontWeight.w400,
+              boxFit: BoxFit.fitHeight,
+              fontSize: smallTextSize,
+              borderWidth: 1.0,
+              onTap: () {
+                _dashboardController.onTab(7);
+                _dashboardController.globalKey.currentState!.closeDrawer();
+              }),
+        ),
+
+        const SizedBox(
+          height: 20,
+        ),
+
+        ///---- text askAnything ----///
+        Padding(padding:  const EdgeInsets.symmetric(horizontal: 10.0),child: _askAnything(),)
       ],
     ));
+  }
+
+
+  ///---- text askAnything ----///
+  Widget _askAnything(){
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 10.0),
+      child: CardDesign(
+        height: 80,
+        tvTitle: AppStrings.askHearingButler,
+        imageUrl: AppImages.appLogoTrans,
+        borderColor: Colors.black,
+        cardColor: AppColor.colorDarkYellow,
+        borderRadius: 20,
+        borderWidth: 1,
+        titleSize: smallTextSize,
+        tvDescription: "",
+        textAlign: TextAlign.center,
+      ),
+    );
   }
 }

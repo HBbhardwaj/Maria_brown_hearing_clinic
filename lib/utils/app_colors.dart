@@ -11,7 +11,7 @@ class AppColor{
    static const Color colorBlack = Color(0xff090909);
    static const Color colorSenderCard = Color(0xffe3e0e0);
    static const Color colorReceiverCard = Color(0xfff2f3cf);
-   static const Color colorDarkYellow = Color(0xfff1b61b);
+   static const Color colorDarkYellow = Color(0xffecc152);
 
 
 }

@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:maria_brown_hearing_clinic/app_routes/page_routes.dart';
 import 'package:maria_brown_hearing_clinic/app_routes/routes.dart';
+import 'package:maria_brown_hearing_clinic/features_controllers/dashboard_controller.dart';
 import 'package:maria_brown_hearing_clinic/utils/app_strings.dart';
 import 'package:salesiq_mobilisten/salesiq_mobilisten.dart';
 
 void main() {
-  runApp(MyApp());
+
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
@@ -35,10 +37,19 @@ class _MyAppState extends State<MyApp> {
         primarySwatch: Colors.blue,
       ),
       initialRoute: Routes.splashScreen,
-      getPages: appRoutes(),
+      onGenerateRoute: RouteGenerator.generateRoute,
+     // getPages: appRoutes(),
+      onInit: (){
+       // initializeController();
+      },
     );
   }
 
+
+  Future<void> initializeController() async{
+    Get.put(DashboardController(), permanent: true,);
+
+  }
 
   Future<void> initMobileListen() async {
     if (io.Platform.isIOS || io.Platform.isAndroid) {
@@ -67,7 +78,6 @@ class _MyAppState extends State<MyApp> {
 
   Future<void> initPlatformState() async {
     if (!mounted) return;
-
   }
 
 

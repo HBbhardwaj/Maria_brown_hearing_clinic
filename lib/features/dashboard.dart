@@ -34,7 +34,7 @@ class Dashboard extends StatelessWidget{
           },
         ),
       ),
-      body: _dashboardController.screensList.elementAt(_dashboardController.tabIndex.value),
+      body: _dashboardController.updatedList.elementAt(_dashboardController.tabIndex.value),
       drawer: NavigationDrawer(),
     )));
   }

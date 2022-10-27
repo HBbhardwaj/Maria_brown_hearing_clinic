@@ -5,19 +5,19 @@ import 'package:maria_brown_hearing_clinic/utils/app_font_size.dart';
 
 class DrawerTextOutline extends StatelessWidget {
   String listText;
-  Color? backgroundColor, borderColor, textColor, imageColor;
+  Color? backgroundColor, borderColor, textColor;
   String? imageText;
   BoxFit? boxFit;
   Function()? onTap;
   FontWeight? fontWeight;
   double? width, height, borderWidth, borderRadius, imageWidth, imageHeight, fontSize;
 
-  DrawerTextOutline({Key? key, required this.listText,
+  DrawerTextOutline({Key? key,
+    required this.listText,
       this.boxFit =  BoxFit.fill,
       this.height,
       this.width,
     this.onTap,
-    this.imageColor = Colors.black,
     this.textColor,
       this.backgroundColor =  Colors.white,
       this.borderWidth = 1.0,
@@ -25,8 +25,8 @@ class DrawerTextOutline extends StatelessWidget {
     this.borderColor =  Colors.black,
     this.fontSize = normalTextSize,
     this.fontWeight =  FontWeight.w500,
-    this.imageWidth  =20,
-    this.imageHeight = 20,
+    this.imageWidth  =25,
+    this.imageHeight = 25,
       this.imageText}) : super(key: key);
 
   @override
@@ -52,11 +52,12 @@ class DrawerTextOutline extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: [
-           Expanded(flex: 1,child:  Image.asset(imageText!,
-             width: imageWidth,
-             height: imageHeight,
-             fit: boxFit!,
-             color: imageColor,
+           Expanded(flex: 1,child:  SizedBox(
+             child: Image.asset(imageText!,
+               width: imageWidth,
+               height: imageHeight,
+               fit: boxFit!,
+             ),
            ),),
             const SizedBox(
               width: 15,

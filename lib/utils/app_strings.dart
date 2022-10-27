@@ -8,7 +8,9 @@ class AppStrings{
   static const String clientInformation = "Client Information";
   static const String hearingAidInfo = "Hearing aid Information";
   static const String goldClubMemberShip = "Gold Club membership";
+  static const String goldClubMemberShipNew = "Gold Club \nMembership";
   static const String goldClubBenefits = "Gold Club Benefits";
+  static const String goldClubBenefitsNew = "Gold Club \nBenefits";
   static const String waxRemovalBooking = "Wax Removal Booking";
   static const String officeContactDetails = "Office Contact Details";
   static const String askHearingButler = "Ask the Hearing Butler anything!";
@@ -23,6 +25,62 @@ class AppStrings{
   static const String monthEvents = "Events on this month";
   static const String seeOurVipGold = "See our VIP Gold Club Partners list";
   static const String news = "News";
+  static const String enterOurFreeOctoberGiveaway = "Enter our free October giveaway!";
+  static const String clickHere = "Click Here";
+  static const String waxRemovingHasReturnedMBHC = "Wax Removal has returned to MBHC";
+  static const String ourNextEventFriday = "Our next event is Friday Oct 29th";
+  static const String thisNovemberOurBirthday = "This November is our 19th birthday";
+  static const String staticDate = "Oct 1, 2022";
+  static const String uInclusionProgram = "You inclusions as part of the \nprogram are the following:";
+  static const String threeYearsWarranty = "3 year warranty \non hearing aids";
+
+  ///--- wax removal strings---///
+  static const String insertZohoBookingWidget = "Insert the Zoho Bookings \nwax removal widget here";
+  static const String waxRemoval = "Wax Removal";
+  static const String reserveYourTimeBelow = "Reserve your time below";
+
+
+  ///--- client info strings---///
+
+  static const String name = "Name:";
+  static const String address = "Address:";
+  static const String suburb = "Suburb:";
+  static const String city = "City:";
+  static const String postCode = "Postcode:";
+  static const String mobile = "Mobile:";
+  static const String phone = "Phone:";
+  static const String email = "Email:";
+  static const String doctor = "Doctor:";
+  static const String refferal = "Refferal:";
+  static const String office = "Office:";
+
+  ///--- hearing aid info strings---///
+  static const String manufacturer = "Manufacturer:";
+  static const String product = "Product:";
+  static const String batteries = "Batteries:";
+  static const String domes = "Domes:";
+  static const String receivers = "Receivers:";
+  static const String purchased = "Purchased:";
+  static const String warranty = "Warranty:";
+  static const String ears = "Ears:";
+  static const String leftSerial = "Left Serial:";
+  static const String rightSerial = "Right Serial:";
+
+  ///--- other contact detail strings---///
+  static const String website = "Website:";
+  static const String hobart = "Hobart:";
+  static const String launceston = "Launceston:";
+  static const String lindisfarne = "Lindisfarne:";
+
+
+  ///---- gold club benefits ---///
+  static const String freeVipGiveaway = "Free VIP Giveaway";
+  static const String promotionMonth = "Promotion of the month";
+  static const String enterThisMonthMBHCDraw = "Enter this months MHBC \ndraw";
+  static const String eventsNews = "Events and news";
+  static const String specialDiscounts = "Special discounts";
+
+
 }
 
 

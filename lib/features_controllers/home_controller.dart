@@ -11,26 +11,40 @@ import '../app_models/home_model.dart';
 class HomeController extends GetxController{
 
   List<HomeModel> homeList = [];
+  List<HomeModel> newsList = [];
 
    Future<List<HomeModel>>? futureOfList;
-
+   Future<List<HomeModel>>? futureOfNewsList;
 
   @override
   void onInit() {
     super.onInit();
 
     homeList = <HomeModel>[
-      HomeModel(title: AppStrings.winCard, description: AppStrings.clickWinCard, imageUrl:  AppImages.appLogoTrans),
-      HomeModel(title: AppStrings.monthEvents, description: "", imageUrl:  AppImages.appLogoTrans),
-      HomeModel(title: AppStrings.seeOurVipGold, description: "", imageUrl:  AppImages.appLogoTrans),
+      HomeModel(title: AppStrings.enterOurFreeOctoberGiveaway, description: AppStrings.clickHere, imageUrl:  AppImages.appLogoTrans),
+      HomeModel(title: AppStrings.ourNextEventFriday, description: AppStrings.clickHere, imageUrl:  AppImages.appLogoTrans),
+     ];
+
+
+    newsList = <HomeModel>[
+      HomeModel(title: AppStrings.waxRemovingHasReturnedMBHC, description: AppStrings.staticDate, imageUrl:  AppImages.appLogoTrans),
+      HomeModel(title: AppStrings.thisNovemberOurBirthday, description: AppStrings.staticDate, imageUrl:  AppImages.appLogoTrans),
     ];
 
 
     futureOfList = _getList();
+    futureOfNewsList = _getNewsList();
   }
 
   Future<List<HomeModel>>  _getList(){
     return Future.value(homeList);
   }
+
+
+  Future<List<HomeModel>>  _getNewsList(){
+    return Future.value(newsList);
+  }
+
+
 
 }

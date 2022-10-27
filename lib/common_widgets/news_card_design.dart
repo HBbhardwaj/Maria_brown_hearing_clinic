@@ -7,8 +7,8 @@ import 'package:maria_brown_hearing_clinic/utils/app_font_size.dart';
 class NewsCardDesign extends StatelessWidget{
   String tvTitle , tvDescription, imageUrl;
   FontWeight titleWeight, descriptionWight;
-  double? width;
-  double height, borderRadius, borderWidth, titleSize, descriptionSize;
+  double? width, imageHeight;
+  double height, borderRadius, borderWidth, titleSize, descriptionSize, margin;
   Color cardColor, borderColor, titleColor, descriptionColor;
 
 
@@ -18,8 +18,10 @@ class NewsCardDesign extends StatelessWidget{
     this.imageUrl = "",
     this.width,
     this.height = 150,
+    this.imageHeight = 150,
     this.borderWidth = 1,
     this.borderRadius = 20,
+    this.margin = 0,
     this.titleSize = largeTextSize,
     this.descriptionSize = normalTextSize,
     this.cardColor = AppColor.colorWhite,
@@ -37,12 +39,13 @@ class NewsCardDesign extends StatelessWidget{
     return Container(
       width: width,
       height: height,
+      margin:  EdgeInsets.symmetric(horizontal: margin) ,
       padding:  const EdgeInsets.all(15.0),
       decoration: BoxDecoration(
           color: cardColor,
           border: Border.all(
               color: borderColor,
-              width: borderRadius
+              width: borderWidth
           ),
 
           borderRadius:  BorderRadius.all(Radius.circular(borderRadius))
@@ -54,10 +57,11 @@ class NewsCardDesign extends StatelessWidget{
             child: Image.asset(
               imageUrl,
               width: width,
+              height: imageHeight,
               fit: BoxFit.fill,
             ),
           ),),
-          const SizedBox(width: 15,),
+          const SizedBox(width: 10,),
           Expanded(flex: 2,child: Column(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -67,8 +71,9 @@ class NewsCardDesign extends StatelessWidget{
                 fontSize: titleSize,
                 fontWeight: titleWeight,
                 textColor: titleColor,
+                textAlign: TextAlign.center,
               ),
-              const SizedBox(height:  15,),
+              const SizedBox(height:  10,),
               CommonTextView(text: tvDescription,
                 fontSize: descriptionSize,
                 fontWeight: descriptionWight,
